@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Important List
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                  <div *ngFor = 'let item of allList; let i = index; '>
+                      <h3 >{{i+1}} - {{item.content}}
+                        <span><button (click)="deleteList(i)" class="btn btn-outline-danger rounded-circle">Delete</button></span>
+                      </h3>
+
+
+                  </div>
+
+                  <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Add new list</label>
+                      <textarea class="form-control" name="message" [(ngModel)]="contentList" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <button (click)="addNewList()" class="btn btn-success">Add</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>
+
